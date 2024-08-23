@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasarela de Pagos Interna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/content/css/pasarelaPagosInterna.css">
+</head>
+
+<body>
+  <main class="pasarela">
+    <h2>Seleccione una plataforma de pago:</h2>
+    <form id="formPagos">
+      <div class="opcionesPagosContainer">
+        <div class="opcionesPagos">
+          <label class="opcionPago">
+            <input type="radio" name="pago" value="d-local">
+            <span>D-Local</span>
+          </label>
+          <label class="opcionPago">
+            <input type="radio" name="pago" value="stripe">
+            <span>Stripe</span>
+          </label>
+        </div>
+        <div class="error oculto">
+          <div class="errorIcon"></div>
+          <p>Seleccione una plataforma de pago</p>
+        </div>
+      </div>
+      <div class="informacion">
+        <p><span class="titulo">Número de la oportunidad: </span>0382742</p>
+        <p><span class="titulo">Nombre de la oportunidad: </span>XXXX</p>
+        <p><span class="titulo">Nombre del Cliente: </span>Juan Perez</p>
+        <p><span class="titulo">Nombre del Tour: </span>Europa Soñada</p>
+        <p><span class="titulo">Moneda: </span>USD</p>
+        <div class="monto">
+          <label for="monto" class="titulo">Monto</label>
+          <input required id="monto" type="number" placeholder="Ingrese aquí el monto a pagar">
+          <div class="error oculto">
+            <div class="errorIcon"></div>
+            <p>Ingrese un monto mayor a 0</p>
+          </div>
+        </div>
+        <div class="pais">
+          <label for="pais" class="titulo">País</label>
+          <div class="customSelect">
+            <select required name="pais" id="pais">
+              <option value="" disabled selected>Seleccione el pais del pasajero</option>
+              <option value="arg">Argentina</option>
+              <option value="chi">Chile</option>
+              <option value="uru">Uruguay</option>
+            </select>
+          </div>
+          <div class="error oculto">
+            <div class="errorIcon"></div>
+            <p>Seleccione un país</p>
+          </div>
+        </div>
+      </div>
+      <button class="generarLink" type="submit">Generar link de pago</button>
+    </form>
+    <div class="copiarContainer">
+      <button id="btnCopiar" class="btnCopiar">Copiar</button>
+      <input type="text" id="textoCopiar" value="https://tourexperto.com/cgi-bin/tesearch.pl?" readonly>
+    </div>
+  </main>
+  <script src="/content/js/pasarelaPagosInterna.js"></script>
+</body>
+
+</html>

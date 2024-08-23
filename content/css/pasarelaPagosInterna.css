@@ -1,0 +1,223 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.pasarela {
+  max-width: 745px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pasarela h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  color: #2E0049;
+  margin: 1.25rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opcionesPagosContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.opcionesPagos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.opcionPago {
+  border-radius: 18px;
+  background-color: #CCCCCC;
+  color: #2E0049;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 28.18px;
+  cursor: pointer;
+  padding: 1.875rem 4.375rem;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.opcionPago input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.opcionPago input:checked+.opcionPago,
+.opcionPago:has(input:checked) {
+  background-color: #6759F9;
+  color: #FFFFFF;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 3px solid #2E0049;
+  border-radius: 30px;
+  background-color: #F1F1F1;
+  padding: 1.563rem 2rem;
+  margin: 2.5rem 0;
+}
+
+.informacion p {
+  color: #2E0049;
+  font-weight: 500;
+}
+
+.informacion .titulo {
+  font-weight: 700;
+}
+
+.monto,
+.pais {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.monto input,
+.pais select {
+  width: 300px;
+  border: 1px solid #2E0049;
+  border-radius: 9px;
+  background-color: #F1F1F1;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.monto input::placeholder {
+  color: #2E0049;
+}
+
+.customSelect {
+  display: inline-block;
+  position: relative;
+}
+
+.customSelect select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.customSelect::after {
+  width: 24px;
+  height: 24px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 1px 3px 0px #0000002E;
+}
+
+.customSelect::before {
+  width: 12px;
+  height: 12px;
+  background-image: url("/content/images/Flecha-select.svg");
+  background-size: 12px 12px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.errorIcon {
+  width: 0.95rem;
+  height: 0.95rem;
+  background-image: url("/content/images/Icon-error.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.error p {
+  color: #F50000;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 16.44px;
+}
+
+.oculto {
+  display: none;
+}
+
+.generarLink {
+  background-color: #DB326E;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 28.18px;
+  padding: 1.25rem 4.375rem;
+  cursor: pointer;
+}
+
+.copiarContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #F1F1F1;
+  border-radius: 30px;
+  border: 3px solid #2E0049;
+  padding-right: 1.25rem;
+  margin: 1.875rem 0;
+}
+
+.btnCopiar {
+  background-color: #2E0049;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 28.18px;
+  padding: 0.813rem 2.938rem;
+  cursor: pointer;
+}
+
+#textoCopiar {
+  border: none;
+  background-color: transparent;
+  color: #000000;
+  font-size: 1.5rem;
+  margin-left: 1.4rem;
+  width: 100% ;
+}
+
+#textoCopiar:focus {
+  outline: none;
+}
