@@ -8,19 +8,27 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-.pasarela {
+.pasarelaHeader, .pasarela {
   max-width: 745px;
+  margin: 0 auto;
+}
+
+.pasarelaHeader {
+  padding: 2.25rem 0 1.5rem 0;
+  margin-bottom: 1.875rem;
+}
+
+.pasarela {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
 }
 
 .pasarela h2 {
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #2E0049;
-  margin: 1.25rem 0;
+  margin-bottom: 1.25rem;
 }
 
 form {
@@ -48,10 +56,10 @@ form {
   background-color: #CCCCCC;
   color: #2E0049;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 28.18px;
   cursor: pointer;
-  padding: 1.875rem 4.375rem;
+  padding: 1.25rem 4.375rem;
   transition: background-color 0.3s, color 0.3s;
   display: inline-block;
 }
@@ -76,7 +84,7 @@ form {
   border-radius: 30px;
   background-color: #F1F1F1;
   padding: 1.563rem 2rem;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 1.5rem 0;
 }
 
 .informacion p {
@@ -91,6 +99,13 @@ form {
 .monto,
 .pais {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.montoChild, .paisChild {
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
@@ -100,10 +115,20 @@ form {
   width: 300px;
   border: 1px solid #2E0049;
   border-radius: 9px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
   background-color: #F1F1F1;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
   padding: 1rem;
+}
+
+.monto input {
+  appearance: textfield;
+}
+
+.monto input::-webkit-inner-spin-button,
+.monto input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .monto input::placeholder {
@@ -180,21 +205,22 @@ form {
   border-radius: 40px;
   color: white;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
   line-height: 28.18px;
-  padding: 1.25rem 4.375rem;
+  padding: 1rem 3.5rem;
   cursor: pointer;
 }
 
 .copiarContainer {
-  width: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
   background-color: #F1F1F1;
   border-radius: 30px;
   border: 3px solid #2E0049;
   padding-right: 1.25rem;
-  margin: 1.875rem 0;
+  margin: 2.5rem 0;
 }
 
 .btnCopiar {
@@ -202,7 +228,8 @@ form {
   border: none;
   border-radius: 50px;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   line-height: 28.18px;
   padding: 0.813rem 2.938rem;
@@ -210,12 +237,12 @@ form {
 }
 
 #textoCopiar {
+  width: 100%;
   border: none;
   background-color: transparent;
   color: #000000;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-left: 1.4rem;
-  width: 100% ;
 }
 
 #textoCopiar:focus {

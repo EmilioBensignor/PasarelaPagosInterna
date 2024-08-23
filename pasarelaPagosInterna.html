@@ -9,10 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/content/css/pasarelaPagosInterna.css">
 </head>
 
 <body>
+  <header class="pasarelaHeader">
+    <img src="/content/images/Logo.png" alt="Logo TEX">
+  </header>
   <main class="pasarela">
     <h2>Seleccione una plataforma de pago:</h2>
     <form id="formPagos">
@@ -39,24 +43,28 @@
         <p><span class="titulo">Nombre del Tour: </span>Europa Soñada</p>
         <p><span class="titulo">Moneda: </span>USD</p>
         <div class="monto">
-          <label for="monto" class="titulo">Monto</label>
-          <input required id="monto" type="number" placeholder="Ingrese aquí el monto a pagar">
-          <div class="error oculto">
+          <div class="montoChild">
+            <label for="monto" class="titulo">Monto</label>
+            <input id="monto" type="number" placeholder="Ingrese aquí el monto a pagar">
+          </div>
+          <div id="errorMonto" class="error oculto">
             <div class="errorIcon"></div>
             <p>Ingrese un monto mayor a 0</p>
           </div>
         </div>
         <div class="pais">
-          <label for="pais" class="titulo">País</label>
-          <div class="customSelect">
-            <select required name="pais" id="pais">
-              <option value="" disabled selected>Seleccione el pais del pasajero</option>
-              <option value="arg">Argentina</option>
-              <option value="chi">Chile</option>
-              <option value="uru">Uruguay</option>
-            </select>
+          <div class="paisChild">
+            <label for="pais" class="titulo">País</label>
+            <div class="customSelect">
+              <select name="pais" id="pais">
+                <option value="" disabled selected>Seleccione el pais del pasajero</option>
+                <option value="arg">Argentina</option>
+                <option value="chi">Chile</option>
+                <option value="uru">Uruguay</option>
+              </select>
+            </div>
           </div>
-          <div class="error oculto">
+          <div id="errorPais" class="error oculto">
             <div class="errorIcon"></div>
             <p>Seleccione un país</p>
           </div>

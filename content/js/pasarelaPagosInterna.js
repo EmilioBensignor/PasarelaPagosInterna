@@ -2,8 +2,8 @@ const formPagos = document.getElementById('formPagos');
 const radios = document.querySelectorAll('input[name="pago"]');
 const monto = document.getElementById('monto');
 const pais = document.getElementById('pais');
-const erroresMonto = monto.parentElement.querySelector('.error');
-const erroresPais = pais.parentElement.querySelector('.error');
+const errorMonto = document.getElementById('errorMonto');
+const errorPais = document.getElementById('errorPais');
 const opcionesPagosContainer = document.querySelector('.opcionesPagosContainer');
 const errorOpcionesPago = opcionesPagosContainer.querySelector('.error');
 const btnCopiar = document.getElementById('btnCopiar');
@@ -32,25 +32,25 @@ formPagos.addEventListener('submit', function (event) {
 
   // Validar monto
   if (monto.value === '' || monto.value <= 0) {
-    if (erroresMonto) {
-      erroresMonto.classList.remove('oculto');
+    if (errorMonto) {
+      errorMonto.classList.remove('oculto');
     }
     valid = false;
   } else {
-    if (erroresMonto) {
-      erroresMonto.classList.add('oculto');
+    if (errorMonto) {
+      errorMonto.classList.add('oculto');
     }
   }
 
   // Validar país
   if (pais.value === '') {
-    if (erroresPais) {
-      erroresPais.classList.remove('oculto');
+    if (errorPais) {
+      errorPais.classList.remove('oculto');
     }
     valid = false;
   } else {
-    if (erroresPais) {
-      erroresPais.classList.add('oculto');
+    if (errorPais) {
+      errorPais.classList.add('oculto');
     }
   }
 
