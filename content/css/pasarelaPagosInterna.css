@@ -18,6 +18,10 @@ body {
   margin-bottom: 1.875rem;
 }
 
+.pasarelaHeader img {
+  width: 50%;
+}
+
 .pasarela {
   display: flex;
   flex-direction: column;
@@ -161,7 +165,7 @@ form {
 .customSelect::before {
   width: 12px;
   height: 12px;
-  background-image: url("/content/images/Flecha-select.svg");
+  background-image: url("/content/img/icons/Flecha-select.svg");
   background-size: 12px 12px;
   content: '';
   position: absolute;
@@ -182,7 +186,7 @@ form {
 .errorIcon {
   width: 0.95rem;
   height: 0.95rem;
-  background-image: url("/content/images/Icon-error.svg");
+  background-image: url("/content/img/formVueloHotel/icon-error.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
