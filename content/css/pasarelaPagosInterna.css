@@ -218,7 +218,7 @@ form {
 
 .copiarContainer {
   width: 70%;
-  display: flex;
+  display: none;
   align-items: center;
   background-color: #F1F1F1;
   border-radius: 30px;
