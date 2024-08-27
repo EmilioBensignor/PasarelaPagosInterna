@@ -19,13 +19,14 @@ body {
 }
 
 .pasarelaHeader img {
-  width: 50%;
+  width: 20%;
 }
 
 .pasarela {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 5rem;
 }
 
 .pasarela h2 {
@@ -83,6 +84,7 @@ form {
 .informacion {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1.25rem;
   border: 3px solid #2E0049;
   border-radius: 30px;

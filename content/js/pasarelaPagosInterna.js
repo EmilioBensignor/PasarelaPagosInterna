@@ -1,4 +1,4 @@
-// Obtener referencias a los elementos del formulario
+// Constantes
 const formPagos = document.getElementById('formPagos');
 const radios = document.querySelectorAll('input[name="pago"]');
 const monto = document.getElementById('monto');
@@ -12,6 +12,23 @@ const copiarContainer = document.getElementById('copiarContainer');
 const btnCopiar = document.getElementById('btnCopiar');
 const textoCopiar = document.getElementById('textoCopiar');
 
+radios.forEach((radio) => radio.addEventListener('change', validarFormulario));
+monto.addEventListener('input', validarFormulario);
+pais.addEventListener('change', validarFormulario);
+
+// Manejar el evento de envío del formulario
+formPagos.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  validarFormulario();
+
+  // Verificar si el formulario es válido
+  if (!generarLink.disabled) {
+    console.log('Formulario enviado correctamente');
+    copiarContainer.style.display = 'flex';
+  }
+});
+
 // Función para validar el formulario
 function validarFormulario() {
   let pagoSeleccionado = false;
@@ -24,7 +41,6 @@ function validarFormulario() {
   const montoValido = monto.value !== '' && monto.value > 0;
   const paisValido = pais.value !== '';
 
-  // Mostrar/ocultar mensajes de error
   if (!pagoSeleccionado) {
     errorOpcionesPago.classList.remove('oculto');
   } else {
@@ -51,30 +67,10 @@ function validarFormulario() {
   }
 }
 
-// Asociar los eventos de validación a los campos del formulario
-radios.forEach((radio) => radio.addEventListener('change', validarFormulario));
-monto.addEventListener('input', validarFormulario);
-pais.addEventListener('change', validarFormulario);
-
-// Manejar el evento de envío del formulario
-formPagos.addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  // Revalidar el formulario antes de enviar
-  validarFormulario();
-
-  // Verificar si el formulario es válido
-  if (!generarLink.disabled) {
-    console.log('Formulario enviado correctamente');
-    copiarContainer.style.display = 'flex';
-    // Aquí podrías agregar código para enviar los datos del formulario a un servidor
-  }
-});
-
 // Función para copiar el link al portapapeles
 btnCopiar.addEventListener('click', function () {
   textoCopiar.select();
-  textoCopiar.setSelectionRange(0, 99999); // Para dispositivos móviles
+  textoCopiar.setSelectionRange(0, 99999);
 
   document.execCommand("copy");
   console.log('Link copiado al portapapeles');
