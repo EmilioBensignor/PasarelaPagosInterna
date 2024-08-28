@@ -12,21 +12,10 @@ const copiarContainer = document.getElementById('copiarContainer');
 const btnCopiar = document.getElementById('btnCopiar');
 const textoCopiar = document.getElementById('textoCopiar');
 
-radios.forEach((radio) => radio.addEventListener('change', validarFormulario));
-monto.addEventListener('input', validarFormulario);
-pais.addEventListener('change', validarFormulario);
-
 // Manejar el evento de envío del formulario
 formPagos.addEventListener('submit', function (event) {
   event.preventDefault();
-
   validarFormulario();
-
-  // Verificar si el formulario es válido
-  if (!generarLink.disabled) {
-    console.log('Formulario enviado correctamente');
-    copiarContainer.style.display = 'flex';
-  }
 });
 
 // Función para validar el formulario
@@ -35,6 +24,7 @@ function validarFormulario() {
   radios.forEach((radio) => {
     if (radio.checked) {
       pagoSeleccionado = true;
+      pagoValue = radio.value;
     }
   });
 
@@ -59,12 +49,17 @@ function validarFormulario() {
     errorPais.classList.add('oculto');
   }
 
-  // Habilitar o deshabilitar el botón de envío según la validación
   if (pagoSeleccionado && montoValido && paisValido) {
-    generarLink.removeAttribute("disabled");
-  } else {
-    generarLink.setAttribute("disabled", "true");
+    enviarFormulario(pagoValue, monto.value, pais.value);
   }
+}
+
+function enviarFormulario (pago, monto, pais) {
+  console.log('Información del formulario:');
+  console.log('Plataforma de pago:', pago);
+  console.log('Monto:', monto);
+  console.log('País:', pais);
+  formPagos.reset();
 }
 
 // Función para copiar el link al portapapeles
